@@ -1,0 +1,75 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.profileCard {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--fs-xl);
+  color: #000;
+  flex-shrink: 0;
+}
+
+.name {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+.info {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.formCard {
+  padding: var(--space-xl);
+}
+
+.formTitle {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-lg);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.formActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    flex-direction: column;
+    text-align: center;
+  }
+}

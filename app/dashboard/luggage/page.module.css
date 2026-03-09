@@ -1,0 +1,93 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+
+/* Form */
+.formCard {
+  padding: var(--space-xl);
+}
+
+.formTitle {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-lg);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.formActions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-sm);
+}
+
+/* List */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.card {
+  padding: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 100px;
+}
+
+.luggageId {
+  font-family: monospace;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.cardDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  flex: 1;
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.cardAmount {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}

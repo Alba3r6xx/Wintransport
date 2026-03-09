@@ -1,0 +1,366 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.heroGlow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-4xl);
+}
+
+.heroText {
+  max-width: 560px;
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-xl);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.heroDesc {
+  font-size: var(--fs-md);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-2xl);
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Hero Image */
+.heroImage {
+  position: relative;
+}
+
+.busImg {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.routePreview {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.routeStop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.routeDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.routeDotMid {
+  background: var(--text-muted);
+}
+
+.routeDotEnd {
+  background: var(--accent);
+}
+
+.routeLine {
+  flex: 1;
+  height: 2px;
+  background: var(--border-light);
+  margin: 0 var(--space-sm);
+  min-width: 20px;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-4xl);
+  padding-top: var(--space-2xl);
+  border-top: 1px solid var(--border);
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNum {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.statLabel {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Services */
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.serviceCard {
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.serviceIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--accent-glow);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+}
+
+.serviceCard h3 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-sm);
+}
+
+.serviceCard p {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Fleet Showcase */
+.fleetShowcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  margin-top: var(--space-2xl);
+}
+
+.fleetImageWrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.fleetImage {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.fleetCard {
+  padding: var(--space-2xl);
+}
+
+.fleetBadge {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  margin-bottom: var(--space-md);
+}
+
+.fleetCard h3 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.fleetFeatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.fleetFeatures li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+.fleetPrice {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.fleetPrice span {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.fleetPrice strong {
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* Testimonials */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+
+.testimonialCard {
+  padding: var(--space-2xl);
+}
+
+.testimonialText {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.testimonialAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--fs-sm);
+}
+
+.testimonialAuthor strong {
+  display: block;
+  font-size: var(--fs-sm);
+}
+
+.testimonialAuthor span {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: var(--space-4xl) var(--space-2xl);
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), transparent);
+}
+
+.cta h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-md);
+}
+
+.cta p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fleetShowcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .heroImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+}

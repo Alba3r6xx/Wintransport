@@ -1,0 +1,19 @@
+.page { display: flex; flex-direction: column; gap: var(--space-xl); }
+.header { display: flex; align-items: center; justify-content: space-between; }
+.title { font-size: var(--fs-xl); font-weight: 800; }
+.formCard { padding: var(--space-xl); }
+.formTitle { font-size: var(--fs-md); margin-bottom: var(--space-lg); }
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+.formActions { grid-column: 1/-1; display: flex; justify-content: flex-end; margin-top: var(--space-sm); }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+.card { padding: var(--space-xl); }
+.cardTop { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-sm); }
+.cardId { font-family: monospace; font-size: var(--fs-xs); color: var(--text-muted); }
+.cardName { font-size: var(--fs-md); font-weight: 700; margin-bottom: var(--space-md); }
+.cardDetails { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); margin-bottom: var(--space-md); }
+.detail { display: flex; flex-direction: column; }
+.detailLabel { font-size: var(--fs-xs); color: var(--text-muted); }
+.detail span:last-child { font-size: var(--fs-sm); font-weight: 600; }
+.mono { font-family: monospace; }
+.cardActions { display: flex; gap: var(--space-xs); }
+@media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .formGrid { grid-template-columns: 1fr; } .header { flex-direction: column; align-items: flex-start; gap: var(--space-md); } }

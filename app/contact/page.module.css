@@ -1,0 +1,118 @@
+.page {
+  padding-top: calc(var(--nav-height) + var(--space-3xl));
+  padding-bottom: var(--space-4xl);
+  min-height: 100vh;
+}
+.header { text-align: center; margin-bottom: var(--space-3xl); }
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-3xl);
+}
+
+.contactCard {
+  padding: var(--space-xl);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.contactIcon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--accent-glow);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.contactLabel {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contactValue {
+  display: block;
+  font-size: var(--fs-sm);
+  margin: 4px 0;
+}
+
+.contactDesc {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.formCard, .aboutCard {
+  padding: var(--space-2xl);
+}
+
+.formCard h2, .aboutCard h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.sentMsg {
+  text-align: center;
+  padding: var(--space-2xl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sentMsg p {
+  color: var(--text-secondary);
+}
+
+.aboutCard p {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.aboutValues {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.aboutValue {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .contactGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .contactGrid { grid-template-columns: 1fr; }
+  .twoCol { grid-template-columns: 1fr; }
+  .formGrid { grid-template-columns: 1fr; }
+}

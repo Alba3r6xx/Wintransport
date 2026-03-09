@@ -1,0 +1,209 @@
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #030308;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===== BACKGROUND ===== */
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 126, 34, 0.08) 0%, transparent 70%);
+  top: -200px;
+  right: -150px;
+  animation: glowDrift 8s ease-in-out infinite;
+}
+
+.bgGlow2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(243, 156, 18, 0.06) 0%, transparent 70%);
+  bottom: -200px;
+  left: -150px;
+  animation: glowDrift 10s ease-in-out infinite reverse;
+}
+
+@keyframes glowDrift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -20px); }
+}
+
+/* Grid overlay */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.5;
+}
+
+/* Light streaks */
+.streak {
+  position: absolute;
+  top: 35%;
+  left: -30%;
+  width: 160%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(230, 126, 34, 0.15) 30%, rgba(243, 156, 18, 0.25) 50%, rgba(230, 126, 34, 0.15) 70%, transparent 100%);
+  transform: rotate(-3deg);
+  animation: streakMove 4s ease-in-out infinite;
+}
+
+.streak2 {
+  position: absolute;
+  bottom: 30%;
+  left: -30%;
+  width: 160%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(230, 126, 34, 0.08) 40%, rgba(243, 156, 18, 0.12) 50%, rgba(230, 126, 34, 0.08) 60%, transparent 100%);
+  transform: rotate(2deg);
+  animation: streakMove 6s ease-in-out infinite reverse;
+}
+
+@keyframes streakMove {
+  0%, 100% { opacity: 0.5; transform: rotate(-3deg) translateX(0); }
+  50% { opacity: 1; transform: rotate(-3deg) translateX(20px); }
+}
+
+/* ===== CENTER ===== */
+.center {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 320px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+/* Logo */
+.logoArea {
+  animation: logoReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes logoReveal {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.logoImg {
+  width: clamp(140px, 50vw, 220px);
+  height: auto;
+  filter: drop-shadow(0 0 40px rgba(230, 126, 34, 0.2));
+}
+
+/* Tagline */
+.tagline {
+  font-size: clamp(10px, 2.5vw, 12px);
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 500;
+  animation: fadeIn 1s 0.3s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ===== PROGRESS ===== */
+.progressArea {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeIn 1s 0.5s ease forwards;
+  opacity: 0;
+}
+
+.progressTrack {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #e67e22, #f39c12, #f1c40f);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+  position: relative;
+}
+
+.progressShine {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+  filter: blur(1px);
+}
+
+.progressMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progressLabel {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.progressPct {
+  font-size: 10px;
+  color: rgba(230, 126, 34, 0.6);
+  font-weight: 700;
+  font-family: 'Outfit', monospace;
+  letter-spacing: 1px;
+}
+
+/* ===== CREDIT ===== */
+.credit {
+  position: absolute;
+  bottom: 24px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 1px;
+  z-index: 10;
+  animation: fadeIn 1s 0.8s ease forwards;
+  opacity: 0;
+}
+
+.credit strong {
+  color: rgba(230, 126, 34, 0.4);
+  font-weight: 600;
+}
